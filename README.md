@@ -14,6 +14,7 @@ Breno Poschardt
 Leonardo Velose
 Andrey Alves
 Henrique Alves
+Lukas Rocha
 
 Grupo: Front-Runners
 
@@ -121,6 +122,7 @@ Páginas: R$260,00
 Dominio: R$158,68
 
 Total: 1.218,68
+
 
 
 
