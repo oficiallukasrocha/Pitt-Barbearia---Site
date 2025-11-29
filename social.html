@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociais</title>
+    <link rel="stylesheet" href="css/style.css">    
+</head>
+
+<body>
+    <header id="cabecalho">
+        <img src="fotos/logo (1).png" alt="logo" width="150px" height="150px">
+        <h1>PittBarbearia</h1>
+        <nav id="nav_cabe">
+            <ul>
+                <li><a href="index.html" target="_self">Início</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Botão para abrir o vídeo -->
+        <button id="video-button">▶ Assistir Vídeo</button>
+
+        <!-- Modal do Vídeo -->
+        <div id="video-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <video id="video-player" controls>
+                    <source src="videos/Vídeo do WhatsApp de 2025-11-06 à(s) 21.43.32_b200bfe4.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+            </div>
+        </div>
+
+        <section id="social">
+            <h2>Redes sociais</h2>
+            <ul>
+                <!-- Instagram do dono Anderson -->
+                <li>
+                    <a href="https://www.instagram.com/_andersoon.1?igsh=MTB5dnBjNjdqb3FvNA%3D%3D"
+                        target="_blank">
+                        <img src="fotos/AndersonDono.png" alt="Anderson Dono" width="100px" height="100px">
+                        Instagram do Anderson (Dono)
+                    </a>
+                </li>
+
+                <!-- Instagram da barbearia -->
+                <li>
+                    <a href="https://www.instagram.com/pittbarbearia?igsh=MXRoaGppbmY2a2VvbA=="
+                        target="_blank">
+                        <img src="fotos/BarbeariaLugar.png" alt="Barbearia" width="100px" height="100px">
+                        Instagram da Barbearia
+                    </a>
+                </li>
+
+                <!-- Instagram do barbeiro Biel -->
+                <li>
+                    <a href="https://www.instagram.com/_vf_biel_?igsh=MWtzZzJpZzF5ejRwcw%3D%3D"
+                        target="_blank">
+                        <img src="fotos/BabeiroBiel.png" alt="Barbeiro Biel" width="100px" height="100px">
+                        Instagram do Barbeiro Biel
+                    </a>
+                </li>
+
+                <!-- Instagram do barbeiro Oliver -->
+                <li>
+                    <a href="https://www.instagram.com/oliver_cortees?igsh=MWx6NzI4N2tlbGxvaA%3D%3D"
+                        target="_blank">
+                        <img src="fotos/BarbeiroOliver.png" alt="Barbeiro Oliver" width="100px" height="100px">
+                        Instagram do Barbeiro Oliver
+                    </a>
+                </li>
+            </ul>
+        </section   >
+    </main>
+    
+    <footer class="rodape">
+        <p>&copy; 2025 Dom Pitt Barbearia. Todos os direitos reservados.</p>
+        <address>Entre em contato
+            <a href="https://w.app/pittbarbearia" target="_blank">Whatsapp</a>
+            <a href="https://www.instagram.com/pittbarbearia/?igsh=MXRoaGppbmY2a2VvbA%3D%3D#" target="_blank">Instagram</a>
+        </address>
+    </footer>
+
+    <script>
+        // Elementos
+        const videoButton = document.getElementById('video-button');
+        const videoModal = document.getElementById('video-modal');
+        const closeButton = document.querySelector('.close-button');
+        const videoPlayer = document.getElementById('video-player');
+
+        // Abrir modal
+        videoButton.addEventListener('click', function() {
+            videoModal.classList.add('active');
+            videoPlayer.play();
+        });
+
+        // Fechar modal ao clicar no X
+        closeButton.addEventListener('click', function() {
+            videoModal.classList.remove('active');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        });
+
+        // Fechar modal ao clicar fora do vídeo
+        videoModal.addEventListener('click', function(e) {
+            if (e.target === videoModal) {
+                videoModal.classList.remove('active');
+                videoPlayer.pause();
+                videoPlayer.currentTime = 0;
+            }
+        });
+
+        // Fechar com a tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                videoModal.classList.remove('active');
+                videoPlayer.pause();
+                videoPlayer.currentTime = 0;
+            }
+        });
+    </script>
+</body>
+</html>
